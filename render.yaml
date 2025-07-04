@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: filmeapp
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn filmeapp.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: filmeapp.settings
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: DEBUG
+        value: 'False'
