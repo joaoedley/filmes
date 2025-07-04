@@ -108,3 +108,21 @@ Configure os IDs dos anúncios no arquivo de configuração do React Native.
 ## 📝 Licença
 
 Este projeto é de código aberto e está disponível sob a licença MIT. 
+
+## Deploy no Render (plano gratuito)
+
+1. Rode os comandos localmente:
+   ```bash
+   python manage.py migrate
+   python manage.py createsuperuser
+   python manage.py collectstatic --noinput
+   ```
+2. Faça commit dos arquivos gerados:
+   - `db.sqlite3`
+   - Pasta `staticfiles/`
+3. Suba para o GitHub e faça o deploy normalmente.
+
+> **Atenção:**
+> - O Render Free não permite rodar comandos no servidor, então tudo deve estar pronto antes do deploy.
+> - O SQLite pode ter limitações de escrita no Render. Para produção real, use PostgreSQL.
+> - O admin só funcionará se o banco e arquivos estáticos estiverem no repositório. 
