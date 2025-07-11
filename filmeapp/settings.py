@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'filmes',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,11 @@ REST_FRAMEWORK = {
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True 
+
+# Cloudinary settings
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dgaxzh9jz',
+    'API_KEY': '393812429996695',
+    'API_SECRET': 'NcrgbCmsNaLsQ2SWq1f-p5PfIe0',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage' 
